@@ -1,28 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Document</title>
+	<meta charset="utf-8">
+	<title>Post</title>
 </head>
 <body>
-    <center><h1>Webboard Easy</h1></center>
-    <hr>
-    <div align="center">
-        <?php
-        $No=$_GET['id'];
-            echo "ต้องการดูกระทู้หมายเลข $No <BR>";
-        if (($No%2)==0)
-            echo "เป็นกระทู้หมายเลขคู่";
-        else 
-            echo "เป็นกระทู้หมายเลขคี่";
-        ?>
-        <table style="border: 2px solid black; width: 40%;">
-                <tr><td colspan="2" style="background-color: #6CD2FE;">แสดงความคิดเห็น</td></tr>
-                <tr><td colspan="2" align="center"><textarea name="text"></textarea><tr><td>
-                <tr><td colspan="2" align="center"><input type="submit" value="ส่งข้อความ"></td></tr>
-        </table>
-        <a href="index.php">กลับไปยังหน้าหลัก</a>
-    </div>
+	<h1 align="center">Webboard KakKak</h1>
+	<hr>
+	<center>
+	 	<?php 
+	 		if ($_GET["id"]%2==0) {
+	 			echo "ต้องการดูกระทู้หมายเลข " . $_GET["id"]."<br>";
+	 			echo "เป็นกระทู้หมายเลขคู่";
+	 		}
+	 		else{
+	 			echo "ต้องการดูกระทู้หมายเลข " . $_GET["id"]."<br>";
+	 			echo "เป็นกระทู้หมายเลขคี่";
+	 		}	 		
+	 	?>
+	</center>
+	<br>
+	<table style="border: 2px solid black; width: 40%; " align="center">
+		<tr style="background-color: #6CD2FE"><td>แสดงความคิดเห็น</td></tr>
+		<tr><td align="center"><textarea name="message" rows="10" cols="60"></textarea><input type="submit" value="ส่งข้อความ"></td></tr>		
+	</table><br>
+	<div align="center"><a href="index.php">กลับไปหน้าหลัก</a></div>
+
 </body>
 </html>
