@@ -1,5 +1,4 @@
-
-	<?php
+<?php
 session_start();
 if(isset($_SESSION['id'])){
     header("location:index.php");
@@ -19,7 +18,7 @@ if(isset($_SESSION['id'])){
 	<div class="container-lg">
     	<h1 style="text-align: center;" class="mt-3">Webboard</h1>
     	<?php include "nav.php" ?>
-		<div class="row">
+		<div class="row mt-4">
 		<div class="col-lg-3"></div>
 		<div class="col-lg-6">
 		<?php
@@ -34,8 +33,7 @@ if(isset($_SESSION['id'])){
 			}
 		?>
 		</div>
-	</div>
-		<div class="row mt-4">
+		<div class="row mt-2">
     		<div class="col-sm-10 col-md-8 col-lg-6 mx-auto">
 				<div class="card border-primary">
 					<form action="register_save.php" method="post">

@@ -33,7 +33,7 @@
                                 $conn = new PDO("mysql:host=localhost;dbname=webboard;charset=utf8","root","");
                                 $sql = "SELECT * FROM category";
                                 foreach($conn->query($sql) as $row){
-                                    echo "<option>".$row['name']."</option>";
+                                    echo "<option value=".$row['id'].">".$row['name']."</option>";
                                 }
                                 $conn=null;
                             ?>
@@ -65,7 +65,7 @@
         </div>
     </div>
 
-    <!-- <h1 style="text-align: center;">Webboard Suisei</h1><hr><br>
+    <!-- <h1 style="text-align: center;">Webboard</h1><hr><br>
     <?php
         echo "ผู้ใช้ : $_SESSION[username]<br>";
         echo "<table><tr><td><form>หมวดหมู่ :</td>

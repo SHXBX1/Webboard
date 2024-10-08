@@ -15,18 +15,18 @@ if (isset($_SESSION['id'])) {
 
 <body>
 	<?php
-	$login = $_POST['username'];
-	$passwd = $_POST['password'];
+	$login = $_POST['login'];
+	$passwd = $_POST['pwd'];
 
 	$conn = new PDO("mysql:host=localhost;dbname=webboard;charset=utf8", "root", "");
-	$sql = "SELECT * FROM user where login='$login' and password=sha1('$pwd')";
+	$sql = "SELECT * FROM user where login='$login' and password=sha1('$passwd')";
 	$result = $conn->query($sql);
 	if ($result->rowCount() == 1) {
 		$data = $result->fetch(PDO::FETCH_ASSOC);
-		$S_SESSION['username'] = $data['login'];
-		$S_SESSION['role'] = $data['role'];
-		$S_SESSION['user_id'] = $data['id'];
-		$S_SESSION['id'] = session_id();
+		$_SESSION['username'] = $data['login'];
+		$_SESSION['role'] = $data['role'];
+		$_SESSION['user_id'] = $data['id'];
+		$_SESSION['id'] = session_id();
 		header("location:index.php");
 		die();
 	} else {
