@@ -1,7 +1,7 @@
 <?php
 session_start();
     $TOP = $_POST['topic'];
-    $COM = sha1($_POST['commnet']);
+    $COM = ($_POST['comment']);
     $cat_id = $_POST['category'];
     $user_id = $_SESSION['user_id'];
     

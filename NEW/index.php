@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        function myfunction() {
+            let c = confirm("ต้องการลบกระทู้นี้หรือไม่");
+            return c;
+        }
+    </script>
 </head>
 <body>
     <div class="container-lg">
@@ -69,7 +75,11 @@
                 INNER JOIN category as t3 ON (t1.cat_id=t3.id) ORDER BY t1.post_date DESC";
                 $result = $conn->query($sql);
                 while($row = $result->fetch()){
-                    echo "<tr><td>[$row[0]] <a href=post.php?id=$row[2] style=text-decoration:none>$row[1]</a><br>$row[3] - $row[4]</td></tr>"; 
+                    echo "<tr><td>[ $row[0] ]<a href=post.php?id=$row[2] style=text-decoration:none> $row[1]</a>";
+                    if(isset($_SESSION['id'])&& $_SESSION['role']=='a'){
+                        echo "<a onclick='return myfunction()' class='btn btn-danger' style='float:right' role='button' href=delete.php?id=$row[2]><i class='bi bi-trash'></i></a>";
+                    }
+                    echo"<br>$row[3] - $row[4]</td></tr>";
                 }
                 $conn=null;
             ?>
