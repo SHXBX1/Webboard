@@ -15,11 +15,13 @@ if (isset($_SESSION['id'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script>
         function Matchpassword() {
-            const pwd = document.getElementById('pwd').value;
-            const pwd2 = document.getElementById('pwd2').value;
-            if (pwd !== pwd2) {
+            const pwd = document.getElementById('pwd');
+            const pwd2 = document.getElementById('pwd2');
+
+            if (pwd.value !== pwd2.value) {
                 alert("รหัสผ่านทั้งสองช่องไม่ตรงกัน");
-                return false;
+                pwd.value = "";
+                pwd2.value = "";
             }
             return true;
         }
