@@ -19,7 +19,7 @@
 </head>
 <body>
     <div class="container-lg">
-        <h1 style="text-align: center;" class="mt-3">Webboard Suisei</h1>
+        <h1 style="text-align: center;" class="mt-3">Shxbx Webboard</h1>
         <nav class="navbar navbar-expand-lg" style="background-color: #d3d3d3;">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.php"><i class="bi bi-house-door-fill"></i>Home</a>
@@ -46,7 +46,7 @@
         <div class="dropdown mt-3">
             <label>หมวดหมู่</label>
             <a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                --ทั้งหมด--
+            --ทั้งหมด--
             </a>
             <ul class="dropdown-menu" aria-labelledby="Button2">
                 <li><a href="#" class=" dropdown-item"></a></li>

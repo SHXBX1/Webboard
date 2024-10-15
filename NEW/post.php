@@ -10,7 +10,7 @@
 </head>
 
 <body>
-	<h1 align="center">Webboard</h1>
+	<h1 align="center">Shxbx Webboard</h1>
 	<hr>
 	<center>
 		<?php

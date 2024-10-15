@@ -18,20 +18,15 @@ if(isset($_SESSION['id'])){
     <script>
         // Change the type of input to password or text
         function SH() {
-    let passw = document.getElementById("check");
-    let icon = document.getElementById("click");
-     
-    if (passw.type == "password") {
-        passw.type = "text";
-        icon.classList.remove("bi-eye-fill"); 
-        icon.classList.add("bi-eye-slash-fill");
-    } else {
-        passw.type = "password";
-        icon.classList.remove("bi-eye-slash-fill");
-        icon.classList.add("bi-eye-fill");
-    }
-}
-
+            let passw = document.getElementById("check");
+             
+            if (passw.type === "password") {
+                passw.type = "text";
+            }
+            else {
+                passw.type = "password";
+            }
+        }
     </script>
 </head>
 <body>
@@ -58,11 +53,17 @@ if(isset($_SESSION['id'])){
                     <label for="pwd" class="form-label">Password:</label>
                 </div>
                 <div class="input-group mb-3">
-                    <input id="check" type="password" class="form-control" name="pwd">
-                    <button class="btn btn-secondary" type="button" onclick="SH()" ><i class="bi bi-eye-fill" id="click"></i></button>
+                    <input type="password" class="form-control" id="check">
+                    <div class="input-group-append">
+                        <button class="btn btn-secondary" type="button" onclick="SH()"><i class="bi bi-eye-slash-fill"></i></button>
+                    </div>
                 </div>
 
-                    
+                    <!-- <div class="input-group-prepend" id="SHpassword">
+                        <input id="pwd" type="password" class="form-control" name="pwd" aria-describedby="addon">
+                        <a href=""><i class="bi bi-eye-slash-fill" id="addon"></i></a>
+                    </div> -->
+                
 
                 <div class="mt-3 d-flex justify-content-center">
                     <button type="submit" class="btn btn-success btn-sm me-2">Login</button>

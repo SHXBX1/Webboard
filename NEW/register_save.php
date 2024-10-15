@@ -2,6 +2,7 @@
 session_start();
     $login = $_POST['login'];
     $passwd = sha1($_POST['pwd']);
+    $passwd2 = sha1($_POST['pwd2']);
     $name = $_POST['name'];
     $gender = $_POST['gender'];
     $email = $_POST['email'];
@@ -11,7 +12,8 @@ session_start();
     $result = $conn->query($sql);
     if($result->rowCount()==1){
         $_SESSION['add_login'] = "error";
-    }else{
+    }
+    else{
         $sql1 = "INSERT INTO user (login, password, name, gender, email, role) 
         VALUES('$login', '$passwd', '$name', '$gender', '$email', 'm')";
         $conn->exec($sql1);
